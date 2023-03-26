@@ -1,29 +1,23 @@
 package multithearding;
 
-import java.util.concurrent.Semaphore;
-
 public class RunWay {
-    String numPlane;
-    long numRunWay;
-    Semaphore semaphore;
+    private int countAll = 0;
+    private int name;
 
-    public RunWay(Semaphore semaphore, String numPlane, long numRunWay) {
-        this.numPlane = numPlane;
-        this.semaphore = semaphore;
-        this.numRunWay = numRunWay;
+    public RunWay(int name) {
+        this.name = name;
     }
 
-    public void lockRunWay(){
-        try {
-            semaphore.acquire(); // блокирует поток пока полоса не доступна
-            System.out.println("Полоса "+numRunWay+" приняла самолет "+numPlane);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public String getName() {
+        return String.valueOf(name);
     }
 
-    public void releaseRunWay(){
-        semaphore.release(); //освобождаем доступ
-        System.out.println("Полоса "+numRunWay+" освободилась ");
+    public void counter() {
+        countAll++;
     }
+
+    public int getCount() {
+        return countAll;
+    }
+
 }
