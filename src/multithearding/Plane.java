@@ -21,7 +21,7 @@ public class Plane implements Runnable{
             e.printStackTrace();
         }
 
-        System.out.println(" самолет " + numPlane + " выруливает на полосу " + runway.getName() );
+        System.out.println(" Самолет " + numPlane + " выруливает на полосу " + runway.getName() );
         System.out.println("Полоса "+runway.getName() +" приняла самолет "+numPlane);
 
         try {
@@ -31,7 +31,7 @@ public class Plane implements Runnable{
         }
 
         runway.counter();
-        System.out.println(" самолет " + numPlane + " взлетел с полосы "+runway.getName());
+        System.out.println(" Самолет " + numPlane + " взлетел с полосы "+runway.getName());
         System.out.println("Полоса "+runway.getName()+" освободилась");
         runWays.add(runway);
     }
