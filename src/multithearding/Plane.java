@@ -5,7 +5,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Plane implements Runnable{
     private String numPlane;
-    private long numRunWay;
     private ArrayBlockingQueue runWays;
     private RunWay runway;
 
@@ -16,7 +15,6 @@ public class Plane implements Runnable{
 
     @Override
     public void run() {
-        numRunWay = Thread.currentThread().getId();
         try {
             runway = (RunWay) runWays.take();
         } catch (InterruptedException e) {
