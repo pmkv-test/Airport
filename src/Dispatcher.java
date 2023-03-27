@@ -7,7 +7,7 @@ public class Dispatcher {
     private static final int PLANE_COUNT = 10;
     private static final int RUNWAY_COUNT = 5;
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         ArrayBlockingQueue<RunWay> runWays = new ArrayBlockingQueue<>(RUNWAY_COUNT);
         for (int i = 1; i <= RUNWAY_COUNT; i++) {
             runWays.add(new RunWay(i));
